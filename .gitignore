@@ -1,0 +1,36 @@
+# Temporary / generated runtime junk
+logs/
+tmp/
+media/inbound/
+canvas/
+*.bak
+*.bak.*
+update-check.json
+
+# Transient sqlite sidecars / temporary copies
+memory/*.tmp-*
+memory/*.backup-*
+
+# Local git metadata from nested workspace repo
+workspace/.git/
+workspace/.git.backup-workspace-repo/
+
+# Session / conversation state (contains secrets and transient context)
+agents/*/sessions/
+
+# Auth/token files
+agents/*/agent/auth-profiles.json
+credentials/
+identity/device-auth.json
+
+# Session lock/temp artifacts
+agents/main/sessions/*.lock
+agents/main/sessions/*.tmp
+agents/main/sessions/*.tmp.*
+agents/main/sessions/sessions.json.*.tmp
+
+# Editor / OS junk
+.DS_Store
+*.swp
+*.swo
+*~

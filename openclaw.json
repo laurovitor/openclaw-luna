@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-17T22:05:49.249Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-17T20:56:03.153Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "openai-codex:shared-1": {
+        "provider": "openai-codex",
+        "mode": "oauth"
+      },
+      "openai-codex:shared-2": {
+        "provider": "openai-codex",
+        "mode": "oauth"
+      },
+      "openai-codex:personal": {
+        "provider": "openai-codex",
+        "mode": "oauth"
+      }
+    },
+    "order": {
+      "openai-codex": [
+        "openai-codex:shared-1",
+        "openai-codex:shared-2",
+        "openai-codex:personal"
+      ]
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai-codex/gpt-5.4"
+      },
+      "workspace": "/home/laurovitor/.openclaw/workspace",
+      "memorySearch": {
+        "provider": "gemini",
+        "model": "gemini-embedding-001",
+        "fallback": "none"
+      }
+    }
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "messages": {
+    "tts": {
+      "auto": "inbound",
+      "provider": "edge",
+      "edge": {
+        "enabled": true,
+        "voice": "pt-BR-FranciscaNeural",
+        "lang": "pt-BR",
+        "outputFormat": "audio-24khz-48kbitrate-mono-mp3",
+        "rate": "+8%",
+        "pitch": "+0Hz"
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "boot-md": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "selfChatMode": false,
+      "allowFrom": [
+        "*"
+      ],
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "mediaMaxMb": 50
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "344d8753c722d99ed4f0238d98e96b6aa3defc7cf011a594"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      }
+    }
+  }
+}

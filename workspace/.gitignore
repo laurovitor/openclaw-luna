@@ -1,0 +1,27 @@
+# OpenClaw local workspace state / temp
+.openclaw/workspace-state.json
+
+# Generated test/output artifacts
+output.mp3
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Python / misc local caches
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local env / secret dump files if they ever appear in workspace
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+*.token
+secrets/
