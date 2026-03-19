@@ -43,7 +43,43 @@
         "model": "gemini-embedding-001",
         "fallback": "none"
       }
-    }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "name": "🌙 Luna",
+        "workspace": "/home/laurovitor/.openclaw/workspace",
+        "sandbox": {
+          "mode": "off"
+        },
+        "subagents": {
+          "allowAgents": [
+            "vulcano-cleaner"
+          ]
+        }
+      },
+      {
+        "id": "vulcano-cleaner",
+        "name": "🖖 Vulcano Cleaner",
+        "workspace": "/home/laurovitor/.openclaw/agents/vulcano-cleaner",
+        "sandbox": {
+          "mode": "off"
+        },
+        "subagents": {
+          "allowAgents": []
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "edit",
+            "exec",
+            "process"
+          ]
+        }
+      }
+    ]
   },
   "tools": {
     "profile": "coding"
